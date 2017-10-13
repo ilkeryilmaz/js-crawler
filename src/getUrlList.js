@@ -22,7 +22,7 @@ const requestUrl = (searchUrl, depth) => {
 const pageLinksControl = ($, depth, baseUrl) => {
   const $relativeLinks = $("a[href^='/']");
 
-  $relativeLinks.each(($, depth, baseUrl) => {
+  $relativeLinks.each(function(){
     const newUrl = baseUrl + $(this).attr("href");
     requestUrl(newUrl, depth+1);
     crawledUrls.push(newUrl);
